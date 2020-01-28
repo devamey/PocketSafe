@@ -48,7 +48,7 @@
         android:onClick="Lock_onClick"
         android:layout_above="@id/centerMark"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/blue_round_button"
+        app:srcCompat="@drawable/blue_round_button"
         android:background="@null"
         android:textSize="15sp"
         android:layout_width="wrap_content"

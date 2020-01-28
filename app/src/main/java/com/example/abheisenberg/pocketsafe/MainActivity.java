@@ -1,6 +1,7 @@
 package com.example.abheisenberg.pocketsafe;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -18,10 +19,6 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.PowerManager;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -36,6 +33,11 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class MainActivity extends AppCompatActivity {
     final String TAG = "MainActivity";
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean                         isDialogCreated, isSafetyLockStarted;
     private Flashlight                      flashlight;
 
+    @SuppressLint("InvalidWakeLockTag")
     @Override
     protected void  onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,9 +81,7 @@ public class MainActivity extends AppCompatActivity {
         Making a new action bar to embed a settings icon on it.
          */
 
-        android.support.v7.app.ActionBar actionBar
-                = getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#7b8bff")));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#7b8bff")));
 
         /*
         All variables are initialized here, when the app starts.

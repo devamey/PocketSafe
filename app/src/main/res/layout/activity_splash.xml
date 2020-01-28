@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#7b8bff"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -7,7 +8,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:src="@drawable/logo_big"
+        app:srcCompat="@drawable/logo_big"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:layout_width="300dp"
